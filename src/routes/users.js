@@ -43,7 +43,7 @@ router.post("/", async (req, res) => {
     if (
       Number(req.body.dni) < 0 ||
       isNaN(Number(req.body.dni)) ||
-      req.body.dni.toString().length < 8 || req.body.dni.toString().length > 11
+      req.body.dni.toString().length < 6
     ) {
       return res.status(400).send("Ingrese un documento de identidad valido");
     }
