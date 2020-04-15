@@ -73,12 +73,12 @@ router.post("/", async (req, res) => {
         const saveUser = await userExists.save();
         res.json(saveUser);
       } else {
-        res.status(400).send('Este documento de identidad no existe, si quiere donar marque la casilla "HA DONADO PREVIAMENTE"')
+        res.status(400).send('Este documento de identidad no existe, si quiere donar desmarque la casilla "HA DONADO PREVIAMENTE"')
       }
 
     } else {
       if (userExists) {
-        res.status(400).send('Este documento de indentidad ya existe, si quiere volver a donar desmarque la casilla "HA DONADO PREVIAMENTE"');
+        res.status(400).send('Este documento de indentidad ya existe, si quiere volver a donar marque la casilla "HA DONADO PREVIAMENTE"');
       } else {
 
         //CREATE DONATION
