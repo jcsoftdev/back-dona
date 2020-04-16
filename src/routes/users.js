@@ -51,7 +51,7 @@ router.post("/", async (req, res) => {
     if (
       Number(req.body.cellphone) < 0 ||
       isNaN(Number(req.body.cellphone)) ||
-      req.body.cellphone.toString().length !== 9
+      req.body.cellphone.toString().length < 9 || req.body.cellphone.toString().length > 12
     ) {
       return res.status(400).send("Ingrese un numero de celular valido");
     }
